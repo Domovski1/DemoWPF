@@ -1,0 +1,66 @@
+﻿<Page x:Class="DemoWPF.Views.Pages.CreateUpdatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoWPF.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="CreateUpdatePage">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <StackPanel
+            Orientation="Horizontal">
+            
+            <!--СтекПанель с изображением и кнопками-->
+            <StackPanel
+                Margin="10">
+                <Image
+                    Name="ImgBox"
+                    Height="300"
+                    Width="300"/>
+
+                <!--Панель с кнопка для работы с изображением-->
+                <StackPanel
+                    Orientation="Horizontal">
+                    
+                <Button
+                    Height="30"
+                    Width="230"
+                    Margin="5 10 10 10"
+                    FontFamily="Wingdings"
+                    Content="1"
+                    Click="BtnAddImage_Click"/>
+                    
+                <Button Height="30"
+                        Width="50"
+                        Click="BtnImageNull_Click"
+                        FontFamily="Wingdings 3"
+                        Content="Q"
+                        />
+                </StackPanel>
+            </StackPanel>
+
+            
+            <!--Данные о продукте-->
+            <StackPanel
+                VerticalAlignment="Center">
+                <TextBox Text="{Binding NativeProduct.Title}" FontSize="17"/>
+                <TextBox Text="{Binding NativeProduct.Description}" FontSize="17"/>
+                <TextBox Text="{Binding NativeProduct.Cost}" FontSize="17"/>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
